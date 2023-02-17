@@ -1,0 +1,538 @@
+
+<!DOCTYPE html><head></head><body>
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slides</title>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.min.css">
+  
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.min.js"></script>
+  <style>
+ #data {
+  display: none;
+}
+
+/* Custom Skeleton Line Height and Margin */
+.custom-skeleton ion-skeleton-text {
+  line-height: 13px;
+}
+
+.custom-skeleton ion-skeleton-text:last-child {
+  margin-bottom: 5px;
+}
+    /*
+ * Dark Colors
+ * ------------------
+ */
+
+body.dark {
+  --ion-color-primary: #428cff;
+  --ion-color-primary-rgb: 66, 140, 255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #3a7be0;
+  --ion-color-primary-tint: #5598ff;
+
+  --ion-color-secondary: #50c8ff;
+  --ion-color-secondary-rgb: 80, 200, 255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #46b0e0;
+  --ion-color-secondary-tint: #62ceff;
+
+  --ion-color-tertiary: #6a64ff;
+  --ion-color-tertiary-rgb: 106, 100, 255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+  --ion-color-tertiary-shade: #5d58e0;
+  --ion-color-tertiary-tint: #7974ff;
+
+  --ion-color-success: #2fdf75;
+  --ion-color-success-rgb: 47, 223, 117;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
+  --ion-color-success-shade: #29c467;
+  --ion-color-success-tint: #44e283;
+
+  --ion-color-warning: #ffd534;
+  --ion-color-warning-rgb: 255, 213, 52;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #e0bb2e;
+  --ion-color-warning-tint: #ffd948;
+
+  --ion-color-danger: #ff4961;
+  --ion-color-danger-rgb: 255, 73, 97;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #e04055;
+  --ion-color-danger-tint: #ff5b71;
+
+  --ion-color-dark: #f4f5f8;
+  --ion-color-dark-rgb: 244, 245, 248;
+  --ion-color-dark-contrast: #000000;
+  --ion-color-dark-contrast-rgb: 0, 0, 0;
+  --ion-color-dark-shade: #d7d8da;
+  --ion-color-dark-tint: #f5f6f9;
+
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152, 154, 162;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+
+  --ion-color-light: #222428;
+  --ion-color-light-rgb: 34, 36, 40;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
+  --ion-color-light-shade: #1e2023;
+  --ion-color-light-tint: #383a3e;
+}
+
+/*
+ * iOS Dark Theme
+ * -------------------
+ */
+
+.ios body.dark {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0, 0, 0;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+
+  --ion-toolbar-background: #0d0d0d;
+
+  --ion-item-background: #1c1c1c;
+  --ion-item-background-activated: #313131;
+}
+
+/*
+ * Material Design Dark Theme
+ * ------------------------------
+ */
+
+.md body.dark {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18, 18, 18;
+
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255, 255, 255;
+
+  --ion-border-color: #222222;
+
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+
+  --ion-item-background: #1a1b1e;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: -webkit-xxx-large;
+}
+  </style>>
+
+
+    <ion-app>
+          <ion-tabs>
+            <!-- Tab views -->
+            <ion-tab tab="home">
+              <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                      <ion-menu-button auto-hide="false"></ion-menu-button>
+                    </ion-buttons>
+                    <ion-buttons slot="primary">
+                      <ion-button>
+                        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+                    <ion-buttons slot="secondary">
+                      <ion-button>
+                        <ion-icon slot="icon-only" name="person-circle"></ion-icon>
+                      </ion-button>
+                      <ion-button>
+                        <ion-icon slot="icon-only" name="search"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+                    <ion-title>Gbox</ion-title>
+                  </ion-toolbar>
+              </ion-header>
+              <ion-content class="ion-padding">
+                <div id="data">
+                  <div id="flat">
+                    <ul>
+                        <li style="width: 225px;">
+                          <div class="container">
+                          <a href="https://hdyaar.org/cache/CAT_punjabi-videos/CAT_punjabi-video-song/6705/mp4/mp4-mobile/Phulkari%20Karan%20Randhawa%20-%20HDYaar.Com.mp4">
+                          <img src="https://i.imgur.com/yTBFfbM.jpg" style="border-radius: 10px;">
+                          <div class="centered"><ion-icon name="play"></ion-icon></div>
+                          </a>
+                          </div>
+                        </li>
+                        <li style="width: 225px;">
+                          <div class="container">
+                          <a href="https://www.jwplayer.com/developers/web-player-demos/closed-captions/">
+                          <img src="https://i.imgur.com/1ibVJSK.jpg" style="border-radius: 10px;"> 
+                          <div class="centered"><ion-icon name="play"></ion-icon></div>
+                          </a> 
+                          </div>
+                        </li>
+                        <li style="width: 225px;">
+                          <div class="container">
+                          <a href="https://cdn8.vidaneh.com/vidaneh/videos/f760b60f0c8e40df9edaec2821572fc1_360.mp4?/Madagascar 3: Europe's Most Wanted (2012) Hindi 360p.mp4"> 
+                          <img src="https://i.imgur.com/dL7N8Km.jpg" style="border-radius: 10px;">
+                          <div class="centered"><ion-icon name="play"></ion-icon></div>
+                          </a>  
+                          </div>
+                        </li>
+                        <li style="width: 225px;">
+                          <div class="container">
+                           <a href="go:secrtdog2h">
+                          <img src="https://i.imgur.com/5LPtp0Y.jpg" style="border-radius: 10px;"> 
+                          <div class="centered"><ion-icon name="play"></ion-icon></div>
+                          </a> 
+                          </div>
+                        </li>
+                        <li style="width: 225px;">
+                          <div class="container">
+                          <a href="go:SpiesDisgH">
+                          <img src="https://i.imgur.com/67unvi0.jpg" style="border-radius: 10px;">
+                          <div class="centered"><ion-icon name="play"></ion-icon></div>
+                          </a>  
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+                  <ion-toolbar>
+                    <ion-label slot="start" style="font-size: 18px;">
+                      Bollywood
+                    </ion-label>
+                    <ion-label slot="end">
+                      <a href="https://cdn8.vidaneh.com/vidaneh/videos/3ca0832b6a304027abeea89f8198f090_main_hls.m3u8"> <ion-button color="danger" size="small">
+                            <ion-icon name="arrow-forward-outline"></ion-icon>
+                        </ion-button></a>
+                    </ion-label>
+                  </ion-toolbar>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <a href="vid">
+                        <img src="https://i.imgur.com/mRS1Ewa.jpg" style="width:100%;border-radius: 10px;">
+                        <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                        </a>
+                      </ion-col>
+                      <ion-col>
+                        <a href="down">
+                        <img src="https://i.imgur.com/kX4bEmV.jpg" style="width:100%;border-radius: 10px;">
+                        <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                        </a>
+                      </ion-col>
+                      <ion-col>
+                        <a href="go:dbnag3h">
+                        <img src="https://i.imgur.com/zpHJC1b.jpg" style="width:100%;border-radius: 10px;">
+                        <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                        </a>
+                      </ion-col>
+                    </ion-row>
+                    </ion-grid>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <a href="go:590403">
+                          <img src="https://i.imgur.com/ZjafK4g.jpg" style="width:100%;border-radius: 10px;">
+                          <ion-button>
+            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+          </ion-button>
+                          <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                          </a>
+                        </ion-col>
+                        <ion-col>
+                          <a href="go:594669">
+                          <img src="https://i.imgur.com/xi2l3SI.jpg" style="width:100%;border-radius: 10px;">
+                          <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                          </a>
+                        </ion-col>
+                        <ion-col>
+                          <a href="go:616880">
+                          <img src="https://i.imgur.com/rv66EYp.jpg" style="width:100%;border-radius: 10px;">
+                          <div class="centered"><ion-icon name="play" style="font-size: xx-large;"></ion-icon></div>
+                          </a>
+                        </ion-col>
+                      </ion-row>
+                      </ion-grid>
+    
+                </div>
+                
+    
+                  <div id="skeleton">
+                    <div id="sflat">
+                      <ul>
+                          <li style="width: 225px;">
+                            <ion-skeleton-text animated style="border-radius: 10px;width: 100%; height: 127px"></ion-skeleton-text>  
+                          </li>
+                          <li style="width: 225px;">
+                            <ion-skeleton-text animated style="border-radius: 10px;width: 100%; height: 127px"></ion-skeleton-text>  
+                          </li>
+                          <li style="width: 225px;">
+                            <ion-skeleton-text animated style="border-radius: 10px;width: 100%; height: 127px"></ion-skeleton-text>
+                          </li>
+                          <li style="width: 225px;">
+                            <ion-skeleton-text animated style="border-radius: 10px;width: 100%; height: 127px"></ion-skeleton-text>  
+                          </li>
+                          <li style="width: 225px;">
+                            <ion-skeleton-text animated style="border-radius: 10px;width: 100%; height: 127px"></ion-skeleton-text>  
+                          </li>
+                      </ul>
+                  </div>
+                  
+                  <ion-toolbar>
+                    <ion-label slot="start">
+                      <ion-skeleton-text animated style="width: 80px"></ion-skeleton-text>
+                    </ion-label>
+                    <ion-label slot="end">
+                      <ion-skeleton-text animated style="width: 41.56px;height: 27.3px;border-radius: 8px;"></ion-skeleton-text>
+                    </ion-label>
+                  </ion-toolbar>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                      </ion-col>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                      </ion-col>
+                      <ion-col>
+                        <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                      </ion-col>
+                    </ion-row>
+                    </ion-grid>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col>
+                          <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                        </ion-col>
+                        <ion-col>
+                          <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                        </ion-col>
+                        <ion-col>
+                          <ion-skeleton-text animated style="width: 100%; height: 145px;border-radius: 8px;"></ion-skeleton-text>
+                        </ion-col>
+                      </ion-row>
+                      </ion-grid>
+    
+                </div>
+                
+              </ion-content>
+            </ion-tab>
+          
+            <ion-tab tab="tv">
+              <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                      <ion-menu-button auto-hide="false"></ion-menu-button>
+                    </ion-buttons>
+                    <ion-buttons slot="primary">
+                      <ion-button>
+                        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+            
+                    <ion-title>Standard</ion-title>
+                  </ion-toolbar>
+              </ion-header>
+            </ion-tab>
+          
+            <ion-tab tab="game">
+              <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                      <ion-menu-button auto-hide="false"></ion-menu-button>
+                    </ion-buttons>
+                    <ion-buttons slot="primary">
+                      <ion-button>
+                        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+            
+                    <ion-title>Standard</ion-title>
+                  </ion-toolbar>
+              </ion-header>
+            </ion-tab>
+            <ion-tab tab="alert">
+              <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                      <ion-menu-button auto-hide="false"></ion-menu-button>
+                    </ion-buttons>
+                    <ion-buttons slot="primary">
+                      <ion-button>
+                        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+            
+                    <ion-title>Standard</ion-title>
+                  </ion-toolbar>
+              </ion-header>
+            </ion-tab>
+          
+            <!-- Tab bar -->
+            <ion-tab-bar slot="bottom">
+              <ion-tab-button tab="home">
+                <ion-icon name="home-outline"></ion-icon>
+                <ion-label>home</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button tab="tv">
+                <ion-icon name="tv-outline"></ion-icon>
+                <ion-label>Tv</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button tab="game">
+                <ion-icon name="game-controller-outline"></ion-icon>
+                <ion-label>Games</ion-label>
+              </ion-tab-button>
+          
+              <ion-tab-button tab="alert">
+                <ion-icon name="notifications-outline"></ion-icon><ion-badge color="danger">0</ion-badge>
+                <ion-label>Notification</ion-label>
+              </ion-tab-button>
+            </ion-tab-bar>
+          </ion-tabs>
+      </ion-app>
+      <script>
+        var flat = $("#flat").flipster({
+            style: 'flat',
+            spacing: 0
+        });
+    </script>
+    <script>
+      var flat = $("#sflat").flipster({
+          style: 'flat',
+          spacing: 0
+      });
+  </script>
+      <script>
+        function onLoad() {
+    const skeletonEl = document.getElementById('skeleton');
+    const dataEl = document.getElementById('data');
+  
+  let i = false;
+  setTimeout(function () {
+    i = !i
+  if(i) {
+  skeletonEl.style.display = 'none';
+      dataEl.style.display = 'block';
+  } else {
+  skeletonEl.style.display = 'block';
+      dataEl.style.display = 'none';
+  }
+    setTimeout();
+  }, 2500);
+  
+  }
+  window.onload = onLoad
+    </script>
+    <script>
+      // Use matchMedia to check the user preference
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+toggleDarkTheme(prefersDark.matches);
+
+// Listen for changes to the prefers-color-scheme media query
+prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
+
+// Add or remove the "dark" class based on if the media query matches
+function toggleDarkTheme(shouldAdd) {
+  document.body.classList.toggle('dark', shouldAdd);
+}
+      </script>
+      <script>
+    let currentPopover = null;
+
+    const buttons = document.querySelectorAll('ion-button');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', handleButtonClick);
+    }
+
+    async function handleButtonClick(ev) {
+      popover = await popoverController.create({
+        component: 'popover-example-page',
+        event: ev,
+        translucent: true
+      });
+      currentPopover = popover;
+      return popover.present();
+    }
+
+    function dismissPopover() {
+      if (currentPopover) {
+        currentPopover.dismiss().then(() => { currentPopover = null; });
+      }
+    }
+
+    customElements.define('popover-example-page', class ModalContent extends HTMLElement {
+      connectedCallback() {
+        this.innerHTML = `
+          <ion-list>
+            <ion-list-header>Ionic</ion-list-header>
+            <ion-item button>Learn Ionic</ion-item>
+            <ion-item button>Documentation</ion-item>
+            <ion-item button>Showcase</ion-item>
+            <ion-item button>GitHub Repo</ion-item>
+            <ion-item lines="none" detail="false" button onClick="dismissPopover()">Close</ion-item>
+          </ion-list>
+        `;
+      }
+    });
+  </script>
