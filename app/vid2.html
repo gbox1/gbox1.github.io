@@ -38,15 +38,13 @@ var art = new Artplayer({
     setting: true,
     plugins: [
         artplayerPluginHlsQuality({
-            // Show quality in control
             control: true,
-
-            // Show quality in setting
             setting: true,
-
-            // I18n
             title: 'Quality',
             auto: 'Auto',
+            getResolution(level){
+                return level.attrs.RESOLUTION + 'P'
+            }
         }),
     ],
     customType: {
