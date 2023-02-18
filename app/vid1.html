@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ArtPlayer</title>
+        <meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://artplayer.org/assets/css/normalize.css">
+		<style>
+		html, body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.artplayer-app {
+    width: 100%;
+    height: 100%;
+}
+
+.tip {
+    text-align: center;
+}
+		</style>
+    </head>
+    <body>
+        <div class="artplayer-app"></div>
+        <script src="https://cdn.jsdelivr.net/npm/artplayer/dist/artplayer.js"></script>
+		<script src="https://cdn.bootcss.com/hls.js/0.10.1/hls.js"></script>
+       <script>
+    var art = new Artplayer({
+    container: document.querySelector('.artplayer-app'),
+    url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_main_hls.m3u8',
+    poster: 'https://i.imgur.com/dL7N8Km.jpg',
+    isLive: false,
+    muted: false,
+    autoplay: false,
+    pip: false,
+    autoSize: false,
+    autoMini: false,
+    screenshot: true,
+    setting: true,
+    loop: true,
+    flip: true,
+    playbackRate: true,
+    aspectRatio: true,
+    fullscreen: true,
+    fullscreenWeb: false,
+    subtitleOffset: true,
+    miniProgressBar: true,
+    localVideo: true,
+    localSubtitle: true,
+    networkMonitor: false,
+    mutex: true,
+    light: true,
+    backdrop: true,
+    theme: '#FF0066',
+    lang: 'en',
+    moreVideoAttr: {
+        playsInline: true,
+        'webkit-playsinline': true,
+        'x5-video-player-type': 'h5',
+        'x5-video-player-fullscreen': false,
+        'x5-video-orientation': 'portrait',
+    },
+    icons: {
+		state: '<img src="https://i.imgur.com/bETmaKU.png">',
+    },
+	quality: [
+	    {   
+		    default: true,
+            name: 'Auto',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_main_hls.m3u8',
+        },
+        {
+            name: '720p',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_480/7d0768dea75c48469262e2ca86506d39_720_720_replaced.m3u8',
+        },
+        {   
+            name: '480p',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_480/7d0768dea75c48469262e2ca86506d39_480_480_replaced.m3u8',
+        },
+		{
+            name: '360p',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_480/7d0768dea75c48469262e2ca86506d39_360_360_replaced.m3u8',
+        },
+		{
+            name: '240p',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_480/7d0768dea75c48469262e2ca86506d39_240_240_replaced.m3u8',
+        },
+		{
+            name: '144p',
+            url: 'https://cdn8.vidaneh.com/vidaneh/videos/7d0768dea75c48469262e2ca86506d39_480/7d0768dea75c48469262e2ca86506d39_144_144_replaced.m3u8',
+        },
+    ],
+    customType: {
+        m3u8: function (video, url) {
+            var hls = new Hls();
+            hls.loadSource(url);
+            hls.attachMedia(video);
+        },
+    },
+    whitelist: ['*'],
+});
+        </script>
+    </body>
+</html>
